@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroForte Interativo: Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-seedling"></i> Agro<span>Forte</span>
+        </div>
+        <div class="score-badge">
+            <i class="fa-solid fa-star"></i> Seu Eco-Nível: <span id="eco-score">0</span> pts
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sua Produção Mais Forte, O Planeta Mais Sustentável</h1>
+            <p>Interaja com nossa plataforma: filtre soluções, monte seu plano de ação e calcule seu impacto real no campo.</p>
+            <a href="#plataforma" class="btn">Começar Agora</a>
+        </div>
+    </section>
+
+    <section id="plataforma" class="container">
+        <h2>Painel de Práticas Sustentáveis</h2>
+        <p class="subtitle">Selecione uma categoria para filtrar. Marque as caixas para calcular sua pontuação de sustentabilidade!</p>
+        
+        <div class="filter-container">
+            <button class="btn-filter active" onclick="filtrarDicas('todas')">Todas</button>
+            <button class="btn-filter" onclick="filtrarDicas('agua')">Manejo de Água</button>
+            <button class="btn-filter" onclick="filtrarDicas('logistica')">Logística e Estoque</button>
+            <button class="btn-filter" onclick="filtrarDicas('tecnologia')">Tecnologia no Campo</button>
+        </div>
+        
+        <div class="grid-dicas">
+            <div class="card dica-item agua">
+                <div class="card-header">
+                    <i class="fa-solid fa-droplet icon-card"></i>
+                    <label class="checkbox-container">
+                        <input type="checkbox" class="eco-check" value="15" onchange="atualizarPontuacao()">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <h3>Irrigação por Gotejamento</h3>
+                <p>Direciona a água direto para a raiz da planta, reduzindo a evaporação em até 60% em comparação aos aspersores comuns.</p>
+                <span class="tag">Água (+15 pts)</span>
+            </div>
+
+            <div class="card dica-item logistica">
+                <div class="card-header">
+                    <i class="fa-solid fa-truck-ramp-box icon-card"></i>
+                    <label class="checkbox-container">
+                        <input type="checkbox" class="eco-check" value="20" onchange="atualizarPontuacao()">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <h3>Embalagens Inteligentes</h3>
+                <p>Utilize caixas plásticas higienizáveis e empilháveis no transporte para evitar o esmagamento de frutos delicados.</p>
+                <span class="tag">Logística (+20 pts)</span>
+            </div>
+
+            <div class="card dica-item tecnologia">
+                <div class="card-header">
+                    <i class="fa-solid fa-chart-line icon-card"></i>
+                    <label class="checkbox-container">
+                        <input type="checkbox" class="eco-check" value="25" onchange="atualizarPontuacao()">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <h3>Sensores IoT nos Silos</h3>
+                <p>Monitore umidade e temperatura interna dos grãos via celular, eliminando perdas por fungos e pragas ocultas.</p>
+                <span class="tag">Tecnologia (+25 pts)</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="simulador" class="bg-light">
+        <div class="container dark-card">
+            <h2>Simulador de Impacto e Desperdício</h2>
+            <p>Informe a sua área de cultivo para visualizar os recursos que deixará de desperdiçar.</p>
+            
+            <form class="form-inline" onsubmit="event.preventDefault(); calcularImpactoAvancado();">
+                <input type="number" id="hectares" placeholder="Área em Hectares (Ex: 30)" min="1" required>
+                <button type="submit">Simular Impacto</button>
+            </form>
+
+            <div id="resultado" class="resultado hidden">
+                <h3>Seu Potencial de Economia Anual:</h3>
+                
+                <div class="metric-container">
+                    <div class="metric-info">
+                        <span><i class="fa-solid fa-faucet-drip text-green"></i> Água Preservada: <strong id="res-agua">0</strong> Litros</span>
+                    </div>
+                    <div class="progress-bar"><div id="bar-agua" class="progress-fill"></div></div>
+                </div>
+
+                <div class="metric-container">
+                    <div class="metric-info">
+                        <span><i class="fa-solid fa-seedling text-green"></i> Adubo/Insumos Salvos: <strong id="res-insumo">0</strong> kg</span>
+                    </div>
+                    <div class="progress-bar"><div id="bar-insumo" class="progress-fill orange"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 AgroForte - Plataforma Interativa de Sustentabilidade.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
