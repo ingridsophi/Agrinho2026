@@ -1,0 +1,3 @@
+#Projeto Agrinho
+
+Essa página é um painel digital interativo que ajuda o produtor rural a reduzir desperdícios e tornar sua fazenda mais sustentável. De forma simples, ela funciona assim: você entra e dá de cara com uma mensagem de incentivo; depois, pode navegar por cartões com dicas práticas sobre água, logística e tecnologia. O site funciona como um jogo: conforme você marca as dicas que já pratica ou quer adotar, ganha pontos em um placar que fica fixo no topo. Por fim, há uma calculadora onde basta digitar o tamanho da sua terra para ver, na hora e de forma bem visual através de barras coloridas, quanta água e insumos você pode economizar por ano.
